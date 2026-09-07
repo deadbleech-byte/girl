@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Сюрприз ❤️</title>
+    <style>
+        body {
+            background: linear-gradient(135deg, #a8e6cf, #dcedc1);
+            font-family: Arial, sans-serif;
+            text-align: center;
+            padding: 50px;
+            height: 100vh;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+        h1 {
+            font-size: 40px;
+            color: #2d3436;
+        }
+        .message {
+            font-size: 28px;
+            color: #2d3436;
+            background: rgba(255,255,255,0.5);
+            padding: 30px;
+            border-radius: 20px;
+            max-width: 600px;
+            margin: 20px 0;
+            min-height: 150px;
+            transition: all 0.5s;
+        }
+        button {
+            background-color: #00b894;
+            color: white;
+            padding: 15px 40px;
+            border: none;
+            border-radius: 50px;
+            font-size: 20px;
+            cursor: pointer;
+            transition: all 0.3s;
+            box-shadow: 0 5px 15px rgba(0,184,148,0.4);
+            margin: 10px;
+        }
+        button:hover {
+            transform: scale(1.1);
+            background-color: #00a381;
+        }
+        .back {
+            background-color: #6c5ce7;
+            box-shadow: 0 5px 15px rgba(108,92,231,0.4);
+        }
+        .back:hover {
+            background-color: #5f3dc4;
+        }
+        .emoji {
+            font-size: 50px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Ты — моё вдохновение ✨</h1>
+    
+    <div class="message" id="messageDisplay">
+        Нажми на кнопку, чтобы узнать, что я думаю о тебе 💕
+    </div>
+    
+    <div>
+        <button onclick="showNewMessage()">Ещё комплимент 💝</button>
+        <button class="back" onclick="window.location.href='index.html'">Назад ↩️</button>
+        
+    <script>
+        const messages = [
+            "Ты самая красивая девушка на свете 🌹",
+            "С тобой я чувствую себя счастливым 🥰",
+            "Твой смех — моя любимая музыка 🎵",
+            "Ты делаешь этот мир лучше ✨",
+            "Каждый день с тобой — праздник 🎉",
+            "Я люблю тебя больше всего на свете ❤️",
+            "Ты — моя звёздочка, которая светит мне 🌟",
+            "скажи Вове что у меня температура 39 и я заболел"
+    
+        ];
+    
+        let index = 0;
+
+        function showNewMessage() {
+            const display = document.getElementById('messageDisplay');
+            display.textContent = messages[index];
+            index = (index + 1) % messages.length;
+        
+            // Маленькая анимация
+            display.style.transform = 'scale(0.9)';
+            setTimeout(() => {
+                display.style.transform = 'scale(1)';
+            }, 200);
+        }
+      </script>
+</body>
+</html>
